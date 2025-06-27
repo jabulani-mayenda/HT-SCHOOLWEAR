@@ -9,6 +9,7 @@
     --text-light: #777;
     --white: #fff;
     --black: #000;
+    --form-bg-color: #e6f0fa; /* Lighter blue for form inputs */
     --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
@@ -206,34 +207,23 @@ span {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: nowrap;
 }
 
 .logo-img {
-    width: 50px;
-    height: auto;
+    width: 80px;
+    max-height: 80px;
     display: block;
 }
 
 .curved-text {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-    font-family: 'Pacifico', cursive;
-    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
     color: var(--primary-color);
-    overflow: hidden;
-}
-
-.curved-text::before {
-    content: 'HT-SCHOOLWEAR';
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 150px;
     text-align: center;
-    transform: rotateX(20deg) skewY(10deg);
-    transform-origin: 50% 50%;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -245,7 +235,7 @@ span {
     color: var(--dark-color);
     text-decoration: none;
     font-weight: 600;
-    margin: 0 1rem;
+    margin: 0 0.8rem;
     position: relative;
     padding: 0.5rem 0;
     transition: var(--transition);
@@ -534,6 +524,12 @@ span {
     animation-delay: 0s;
 }
 
+.floating-item.tracksuits {
+    top: 30%;
+    left: 60%;
+    animation-delay: 1s;
+}
+
 .floating-item.tie {
     top: 20%;
     left: 80%;
@@ -553,6 +549,12 @@ span {
     left: 75%;
     animation-delay: 6s;
     animation-duration: 16s;
+}
+
+.floating-item.sportswear {
+    top: 40%;
+    left: 20%;
+    animation-delay: 3s;
 }
 
 @keyframes float {
@@ -886,7 +888,12 @@ span {
     border-radius: var(--border-radius);
     font-family: 'Poppins', sans-serif;
     transition: var(--transition);
-    background-color: #f0f4f8; /* Matching color for form */
+    background-color: var(--form-bg-color);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: var(--primary-color);
 }
 
 .form-group input:focus,
@@ -917,7 +924,7 @@ span {
 /* Footer */
 .footer {
     padding: 3rem 0;
-    background-color: var(--dark-color);
+    background: linear-gradient(135deg, var(--dark-color), #4a4a4a);
     color: var(--white);
 }
 
@@ -934,11 +941,10 @@ span {
     text-align: center;
 }
 
-.footer-logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.5rem;
+.footer-logo .logo-img {
+    width: 80px;
+    max-height: 80px;
     margin-bottom: 1rem;
-    color: var(--primary-color);
 }
 
 .footer-links h3,
@@ -1023,6 +1029,10 @@ span {
         max-width: 720px;
     }
 
+    .section-title {
+        font-size: 2.5rem;
+    }
+
     .nav-links {
         display: flex;
         list-style: none;
@@ -1081,6 +1091,6 @@ span {
 
 @media (min-width: 1024px) {
     .container {
-        max-width: 960px;
+        max-width: 1200px;
     }
 }
